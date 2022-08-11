@@ -79,10 +79,6 @@ const socketServer = io(server, {
   }
 });
 
-app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/index.html');
-});
-
 socketServer.on('connection', (socket) => {
   socket.on('start', () => {
     horses.map(horse => horse.distance = 0);
